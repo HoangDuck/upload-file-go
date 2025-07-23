@@ -1,18 +1,13 @@
 package routes
 
-import (
-	"net/http"
-
-	"github.com/labstack/echo/v4"
-)
+import "github.com/labstack/echo"
 
 func (api *API) SetupRouter() {
 	groupV1 := api.Echo.Group("/api/v1")
 	tests := groupV1.Group("/tests")
 
 	tests.GET("/", func(c echo.Context) error {
-		return c.JSON(http.StatusOK, "OK")
+
 	})
 	tests.POST("/upload", api.TestHandler.TestHandler)
-	tests.GET("/download", api.TestHandler.DownloadFile)
 }

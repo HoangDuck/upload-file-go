@@ -13,8 +13,7 @@ type TestHandler struct {
 }
 
 func (t *TestHandler) DownloadFile(c echo.Context) error {
-	fileName := c.QueryParam("fileName")
-	return c.File(fileName)
+	return c.JSON(http.StatusOK, "OK")
 }
 
 func (t *TestHandler) TestHandler(c echo.Context) error {

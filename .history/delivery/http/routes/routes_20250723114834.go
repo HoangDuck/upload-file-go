@@ -11,8 +11,7 @@ func (api *API) SetupRouter() {
 	tests := groupV1.Group("/tests")
 
 	tests.GET("/", func(c echo.Context) error {
-		return c.JSON(http.StatusOK, "OK")
+		return c.JSON(http.StatusOK, "Hello World")
 	})
 	tests.POST("/upload", api.TestHandler.TestHandler)
-	tests.GET("/download", api.TestHandler.DownloadFile)
 }

@@ -14,5 +14,4 @@ func (api *API) SetupRouter() {
 		return c.JSON(http.StatusOK, "OK")
 	})
 	tests.POST("/upload", api.TestHandler.TestHandler)
-	tests.GET("/download", api.TestHandler.DownloadFile)
 }
